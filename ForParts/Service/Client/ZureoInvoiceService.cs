@@ -1,9 +1,10 @@
 ﻿using AutoMapper;
 using ForParts.DTOs.Invoice;
-using ForParts.IService.Client;
+using ForParts.IService.Cliente;
 using InvoiceAlias = ForParts.Models.Invoice.Invoice;
 using Newtonsoft.Json;
 using System.Text;
+using ForParts.DTOs.Zureo;
 
 namespace ForParts.Service.Client
 {

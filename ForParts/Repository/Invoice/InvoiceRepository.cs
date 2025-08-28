@@ -1,8 +1,10 @@
-﻿using System;
-using ForParts.Data;
+﻿using ForParts.Data;
 using ForParts.IRepository.Invoice;
 using ForParts.Models.Enums;
+using ForParts.Models.Product;
+using ForParts.Models.Supply;
 using Microsoft.EntityFrameworkCore;
+using System;
 using InvoiceAlias = ForParts.Models.Invoice.Invoice;
 
 
@@ -56,6 +58,39 @@ namespace ForParts.Repository.Invoice
         {
             _context.Invoices.Update(invoice);
             await _context.SaveChangesAsync();
+        }
+        public async Task<bool> ExistInInvoice(string codeSupply, CancellationToken ct = default)
+        {
+            if (string.IsNullOrWhiteSpace(codeSupply))
+                return false;
+
+            // Caso típico: existe tabla de detalle con el SKU/código del insumo
+            return await _context.InvoiceItems         // <-- tu DbSet del detalle (cambiá el nombre)
+                .AsNoTracking()
+                .AnyAsync(inv => inv.Product.ProductoInsumos.Any(s => s.supply.codeSupply == codeSupply), ct);
+        }
+
+        public async Task<List<SupplyNecessary>> GetFacturadosByProductIds(List<int> productsId)
+        {
+           
+        
+                var ids = productsId?.Distinct().ToArray() ?? Array.Empty<int>();
+                if (ids.Length == 0) return new List<SupplyNecessary>();
+
+                // Trae los supplies que están en facturas facturadas y 
+                // pertenecen a alguno de los productos indicados.
+                return await _context.InvoiceItems
+                    .AsNoTracking()
+                    .Where(inv =>  ids.Contains(inv.Product.productId)).SelectMany(inv => inv.Product.ProductoInsumos)
+                     .Distinct()                 // evita duplicados del mismo supply en varias facturas/productos
+                    .ToListAsync();
+            }
+
+        public async Task<bool> IsProductInto(string codeProduct)
+        {
+            if (string.IsNullOrWhiteSpace(codeProduct))
+                return false;
+            return await _context.Invoices.AsNoTracking().AnyAsync(inv => inv.Items.Any(ii => ii.ProductCode == codeProduct));
         }
     }
 }

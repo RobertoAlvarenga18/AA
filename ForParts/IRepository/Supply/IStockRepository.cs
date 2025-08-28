@@ -14,5 +14,7 @@ namespace ForParts.IRepository.Supply
         // Movimientos de stock
         Task<bool> AddStockMovementAsync(StockMovement newMovement);
         Task<IEnumerable<StockMovement>> GetAllStockMovements();
+        List<Profile> GetAvailableProfiles(string nombre, string color, decimal largoNecesario);
+        int GetAvailableQuantity(int idSupply);
     }
 }

@@ -1,6 +1,7 @@
 ﻿
 using ForParts.Models.Auth;
-using ForParts.Models.Custumer;
+using ForParts.Models.Budgets;
+using ForParts.Models.Customers;
 using ForParts.Models.Invoice;
 using ForParts.Models.Product;
 using ForParts.Models.Supply;
@@ -23,6 +24,11 @@ namespace ForParts.Data
         public DbSet<Profile> Profiles { get; set; }
         public DbSet<Glass> Glasses { get; set; }
         public DbSet<Accessory> Accessories { get; set; }
+
+        //BUDGETS
+        public DbSet<Budget> Budgets { get; set; }
+
+        public DbSet<Formula> Formulas { get; set; }
 
         //STOCK
         public DbSet<Stock> Stocks { get; set; }

@@ -1,11 +1,15 @@
-﻿using CustumerAlias = ForParts.Models.Customers.Customer;
+﻿using ForParts.Models.Customers;
 using ForParts.Models.Enums;
+using ForParts.Models.Invoice;
 using System.ComponentModel.DataAnnotations;
+using ForParts.Models.Customers;
+using CustomerAlias = ForParts.Models.Customers.Customer;
 
-namespace ForParts.Models.Invoice
+namespace ForParts.DTOs.Zureo
 {
-    public class Invoice
+    public class ZureoInvoiceDto
     {
+
         [Key]
         public int InvoiceId { get; set; }
         public DateTime InvoiceDateCreate { get; set; } = DateTime.Today;
@@ -20,8 +24,8 @@ namespace ForParts.Models.Invoice
         public string ZureoRespuesta { get; set; } = string.Empty;
 
         public int CustomerId { get; set; }
-        public CustumerAlias Customer { get; set; } = null!;
+        public CustomerAlias Customer { get; set; } = null!;
         public List<InvoiceItem> Items { get; set; } = new();
     }
-
 }
+

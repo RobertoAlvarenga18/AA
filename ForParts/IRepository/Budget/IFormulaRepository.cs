@@ -1,6 +1,6 @@
-﻿using API_REST_PROYECT.Models.Budget;
+﻿using ForParts.Models.Budgets;
 
-namespace API_REST_PROYECT.IRepository
+namespace ForParts.IRepository
 {
     public interface IFormulaRepositorio
     {

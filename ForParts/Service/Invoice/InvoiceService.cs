@@ -3,12 +3,12 @@ using ForParts.DTOs.Invoice;
 using ForParts.Exceptions.Invoice;
 using ForParts.IRepository.Invoice;
 using ForParts.IService.Invoice;
-using ForParts.Models.Custumer;
+using ForParts.Models.Customers;
 using ForParts.Models.Enums;
 using ForParts.Models.Invoice;
 using InvoiceAlias = ForParts.Models.Invoice.Invoice;
 using ProductAlias = ForParts.Models.Product.Product;
-using CustomerAlias = ForParts.Models.Custumer.Customer;
+using CustomerAlias = ForParts.Models.Customers.Customer;
 
 namespace ForParts.Service.Invoice
 {
@@ -27,6 +27,8 @@ namespace ForParts.Service.Invoice
         {
             //Validar al cliente?
 
+
+            Customer clienteNuevo = new Customer();
             var invoice = new InvoiceAlias
             {
                 InvoiceDateCreate = dto.InvoiceDateCreate,
@@ -37,7 +39,7 @@ namespace ForParts.Service.Invoice
                 InvoiceDescription = dto.InvoiceDescription,
                 InvoiceExpirationDate = dto.InvoiceExpirationDate,
                 CustomerId = dto.CustomerId,
-                Customer = CustomerAlias,
+                Customer = clienteNuevo,
                 InvoiceState = InvoiceState.Pendiente,
                 Items = dto.Items.Select(i => new InvoiceItem
                 {

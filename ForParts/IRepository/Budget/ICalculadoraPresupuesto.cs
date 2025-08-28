@@ -1,53 +1,53 @@
-﻿using API_REST_PROYECT.DTOs.Product;
-using API_REST_PROYECT.Models.Products;
+﻿using ForParts.DTOs.Product;
+using ForParts.Models.Product;
 
-namespace API_REST_PROYECT.IRepository
+namespace ForParts.IRepository
 {
     public interface ICalculadoraPresupuesto
     {
         //VENTANAS
-        ProductoPresupuestado CalcularPresupuestoVentanaS20(ProductBudgetDto dto);
-        ProductoPresupuestado CalcularPresupuestoVentanaS25(ProductBudgetDto prodDto);
-        Task<ProductoPresupuestado> CalcularPresupuestoVentanaProbba(ProductBudgetDto prodDto);
-        Task<ProductoPresupuestado> CalcularPresupuestoVentanaGalaCR(ProductBudgetDto prodDto);
-        Task<ProductoPresupuestado> CalcularPresupuestoVentanaGala(ProductBudgetDto prodDto);
-        ProductoPresupuestado CalcularPresupuestoVentanaSumma(ProductBudgetDto prodDto);
+        Task<BudgetedProduct> CalcularPresupuestoVentanaS20(ProductBudgetDto dto);
+        Task<BudgetedProduct> CalcularPresupuestoVentanaS25(ProductBudgetDto prodDto);
+        Task<BudgetedProduct> CalcularPresupuestoVentanaProbba(ProductBudgetDto prodDto);
+        Task<BudgetedProduct> CalcularPresupuestoVentanaGalaCR(ProductBudgetDto prodDto);
+        Task<BudgetedProduct> CalcularPresupuestoVentanaGala(ProductBudgetDto prodDto);
+        Task<BudgetedProduct> CalcularPresupuestoVentanaSumma(ProductBudgetDto prodDto);
 
         //PUERTAS
-        ProductoPresupuestado CalcularPresupuestoPuertaS30(ProductBudgetDto prodDto);
-        ProductoPresupuestado CalcularPresupuestoPuertaMecal30(ProductBudgetDto prodDto);
+        Task<BudgetedProduct> CalcularPresupuestoPuertaS30(ProductBudgetDto prodDto);
+        Task<BudgetedProduct> CalcularPresupuestoPuertaMecal30(ProductBudgetDto prodDto);
 
-        ProductoPresupuestado CalcularPresupuestoPuertaProbba(ProductBudgetDto prodDto);
+        Task<BudgetedProduct> CalcularPresupuestoPuertaProbba(ProductBudgetDto prodDto);
 
-        ProductoPresupuestado CalcularPresupuestoPuertaGala(ProductBudgetDto prodDto);
-        ProductoPresupuestado CalcularPresupuestoPuertaSumma(ProductBudgetDto prodDto);
+        Task<BudgetedProduct> CalcularPresupuestoPuertaGala(ProductBudgetDto prodDto);
+        Task<BudgetedProduct> CalcularPresupuestoPuertaSumma(ProductBudgetDto prodDto);
 
         //Batiente
-        ProductoPresupuestado CalcularPresupuestoBatienteS30(ProductBudgetDto prodDto);
-        ProductoPresupuestado CalcularPresupuestoBatienteMecal30(ProductBudgetDto prodDto);
+        Task<BudgetedProduct> CalcularPresupuestoBatienteS30(ProductBudgetDto prodDto);
+        Task<BudgetedProduct> CalcularPresupuestoBatienteMecal30(ProductBudgetDto prodDto);
 
-        ProductoPresupuestado CalcularPresupuestoBatienteProbba(ProductBudgetDto prodDto);
+        Task<BudgetedProduct> CalcularPresupuestoBatienteProbba(ProductBudgetDto prodDto);
 
-        ProductoPresupuestado CalcularPresupuestoBatienteGala(ProductBudgetDto prodDto);
-        ProductoPresupuestado CalcularPresupuestoBatienteSumma(ProductBudgetDto prodDto);
+        Task<BudgetedProduct> CalcularPresupuestoBatienteGala(ProductBudgetDto prodDto);
+        Task<BudgetedProduct> CalcularPresupuestoBatienteSumma(ProductBudgetDto prodDto);
 
         //Tabaqueras
-        ProductoPresupuestado CalcularPresupuestoTabaqueraS30(ProductBudgetDto prodDto);
-        ProductoPresupuestado CalcularPresupuestoTabaqueraMecal30(ProductBudgetDto prodDto);
+        Task<BudgetedProduct> CalcularPresupuestoTabaqueraS30(ProductBudgetDto prodDto);
+        Task<BudgetedProduct> CalcularPresupuestoTabaqueraMecal30(ProductBudgetDto prodDto);
 
-        ProductoPresupuestado CalcularPresupuestoTabaqueraProbba(ProductBudgetDto prodDto);
+        Task<BudgetedProduct> CalcularPresupuestoTabaqueraProbba(ProductBudgetDto prodDto);
 
-        ProductoPresupuestado CalcularPresupuestoTabaqueraGala(ProductBudgetDto prodDto);
-        ProductoPresupuestado CalcularPresupuestoTabaqueraSumma(ProductBudgetDto prodDto);
+        Task<BudgetedProduct> CalcularPresupuestoTabaqueraGala(ProductBudgetDto prodDto);
+        Task<BudgetedProduct> CalcularPresupuestoTabaqueraSumma(ProductBudgetDto prodDto);
 
         //Proyectante
-        ProductoPresupuestado CalcularPresupuestoProyectanteS30(ProductBudgetDto prodDto);
-        ProductoPresupuestado CalcularPresupuestoProyectanteMecal30(ProductBudgetDto prodDto);
+        Task<BudgetedProduct> CalcularPresupuestoProyectanteS30(ProductBudgetDto prodDto);
+        Task<BudgetedProduct> CalcularPresupuestoProyectanteMecal30(ProductBudgetDto prodDto);
 
-        ProductoPresupuestado CalcularPresupuestoProyectanteProbba(ProductBudgetDto prodDto);
+        Task<BudgetedProduct> CalcularPresupuestoProyectanteProbba(ProductBudgetDto prodDto);
 
-        ProductoPresupuestado CalcularPresupuestoProyectanteGala(ProductBudgetDto prodDto);
-        ProductoPresupuestado CalcularPresupuestoProyectanteSumma(ProductBudgetDto prodDto);
+        Task<BudgetedProduct> CalcularPresupuestoProyectanteGala(ProductBudgetDto prodDto);
+        Task<BudgetedProduct> CalcularPresupuestoProyectanteSumma(ProductBudgetDto prodDto);
 
     }
 }

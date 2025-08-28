@@ -1,9 +1,10 @@
-﻿using API_REST_PROYECT.DTOs.Budget;
-using API_REST_PROYECT.Exceptions.Budget;
-using API_REST_PROYECT.IServices;
+﻿using ForParts.DTOs.Budget;
+using ForParts.Exceptions.Budget;
+using ForParts.Services;
+using ForParts.IService.Buget;
 using Microsoft.AspNetCore.Mvc;
 
-namespace API_REST_PROYECT.Controllers.BudgetC
+namespace ForParts.Controllers.BudgetC
 {
     public class BudgetController : Controller
     {

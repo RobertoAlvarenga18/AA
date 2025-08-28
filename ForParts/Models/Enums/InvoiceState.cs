@@ -4,6 +4,7 @@
     {
         Pendiente,
         Emitir,
-        Rechazada
+        Rechazada,
+        Facturado
     }
 }

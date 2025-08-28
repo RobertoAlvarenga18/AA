@@ -52,5 +52,19 @@ namespace ForParts.Repositorys.Supply
         {
             return await _contextDb.Set<StockMovement>().ToListAsync();
         }
+
+        public List<Profile> GetAvailableProfiles(string nombre, string color, decimal largoNecesario)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetAvailableQuantity(int idSupply)
+        { 
+            return _contextDb.Stocks
+                .Where(s => s.Supply.idSupply == idSupply)
+                .Sum(s => s.stockQuantity);
+
+           
+        }
     }
 }

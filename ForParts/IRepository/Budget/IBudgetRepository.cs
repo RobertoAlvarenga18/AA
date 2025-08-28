@@ -1,7 +1,7 @@
-﻿using API_REST_PROYECT.Models.Budget;
-using API_REST_PROYECT.Models.Products;
+﻿using ForParts.Models.Budgets;
+//using ForParts.ForParts
 
-namespace API_REST_PROYECT.IRepository
+namespace ForParts.IRepository
 {
     public interface IBudgetRepository
     {

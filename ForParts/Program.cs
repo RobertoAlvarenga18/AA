@@ -23,6 +23,7 @@ using static Microsoft.SqlServer.Management.Sdk.Sfc.RequestObjectInfo;
 using System.Text.Json.Serialization;
 using ForParts.IRepository.Invoice;
 using ForParts.Repository.Invoice;
+using ForParts.IRepository.Product;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -77,6 +78,7 @@ builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 builder.Services.AddScoped<IStockRepository, StockRepository>();
 builder.Services.AddScoped(typeof(ISupplyRepository<>), typeof(SupplyRepository<>));
 builder.Services.AddScoped<IInvoiceRepository, InvoiceRepository>();
+builder.Services.AddScoped<IProductRepository, IProductRepository>();
 
 builder.Services.AddScoped<IServiceAuth, ServiceAuth>();
 builder.Services.AddScoped<IServiceEmailAuth, EmailAuthService>();
