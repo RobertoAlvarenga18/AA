@@ -1,8 +1,10 @@
 ﻿using ForParts.Data;
 using ForParts.Exceptions.Product;
+using ForParts.Exceptions.Supply;
 using ForParts.IRepository.Product;
-using Microsoft.EntityFrameworkCore;
+using ForParts.Models.Enums;
 using ForParts.Models.Product;
+using Microsoft.EntityFrameworkCore;
 
 namespace ForParts.Repository.Products
 {
@@ -39,11 +41,14 @@ namespace ForParts.Repository.Products
             return rows > 0;
         }
 
-        public Task AddStockMovementAsync(ProductMovement nuevoMovimientoStock)
+        
+
+        public async Task AddStockMovementAsync(ProductMovement nuevoMovimientoStock)
         {
             throw new NotImplementedException();
+
         }
-        public async Task<bool> ExistProductAsync(string codeProduct)
+    public async Task<bool> ExistProductAsync(string codeProduct)
         {
             if (string.IsNullOrWhiteSpace(codeProduct))
                 return false;
